@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE instance-profile
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/product-profile.dtd">
+
+<instance-profile id="hi"
+                 name="GDC 2025"
+                 start-page="Day-1-Basics.md">
+    <toc-element topic="Day-1-Basics.md">
+        <toc-element topic="Opgave-1-Krop-og-kode.md"/>
+        <toc-element topic="Opgave-2-Variabler.md"/>
+        <toc-element topic="Opgave-3-If-s-og-input.md"/>
+    </toc-element>
+    <toc-element topic="Day-2-Advanced.md">
+        <toc-element topic="Opgave-1-Instantiate.md">
+        </toc-element>
+        <toc-element topic="Opgave-2-Kollision.md"/>
+        <toc-element topic="Opgave-3-Random-og-NavMesh.md"/>
+        <toc-element topic="Del-4-Raycasting.md"/>
+    </toc-element>
+    <toc-element topic="Dag-3-Diverse.md">
+        <toc-element topic="Opgave-1-3D-og-Lyd.md"/>
+        <toc-element topic="Opgave-2-UI.md"/>
+    </toc-element>
+</instance-profile>
