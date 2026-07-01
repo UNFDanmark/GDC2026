@@ -1,4 +1,4 @@
-# Del 4 (Advanced AI)
+# Del 4 (Simpel raycasting)
 
 I denne sektion vil vi prøve at lave et simpel AI, hvor når fjenden kan se spilleren, så skyder den.
 ## Raycasting
