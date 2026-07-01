@@ -1,6 +1,9 @@
 # Del 2 (Variabler)
 
 ## Variabler og typer
+
+{id="variables"}
+
 Når man skriver kode får man ofte brug for at gemme nogle værdier. Disse gemmepladser kalder vi variabler.
 I C# ville en variabel kunne se sådan ud:
 ```C#
@@ -31,7 +34,7 @@ int health;
 Men det er jo ikke så sjovt at have en variabel uden at vide hvad den indeholder. Det er dog en god ide at sætte en værdi med det samme når det er muligt. 
 
 ## Men hvor skal variablerne være?
-
+{id="scoping"}
 Variabler kan være i mange forskellig steder. Hvis vi husker første lektion, så har vi en `Start` og en `Update` metode.
 - Hvis vi placerer en variabel i `Start` metoden, så vil den kun være tilgængelig i `Start` metoden. 
 - Hvis vi placerer den i `Update` metoden, så vil den kun være tilgængelig i `Update` metoden.
@@ -61,6 +64,8 @@ public class PlayerScript : MonoBehaviour
 Hvis i bemærker, så kan i se at reglen er at variablerne er tilgængelige inde mellem hver `{}`. Så fordi `JegVirkerKunIStart` er inde i `Start` metodens `{}`, så kan den ikke tilgås i `Update` metoden.
 
 ## Tilgængelighed i editoren
+{id="public"}
+
 I C# kan man definere en variabel der lever udenfor en metode som `public`. Det betyder at andre steder kan tilgå den. Se for eksempel koden herunder:
 ```C#
 public class PlayerScript : MonoBehaviour

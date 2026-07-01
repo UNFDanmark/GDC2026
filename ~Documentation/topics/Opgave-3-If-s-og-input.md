@@ -13,6 +13,7 @@ Det kan være at planet ikke ligger ved `(0,0,0)`. For at sørge for det, så ka
 
 
 ## C# `if`-statements
+{id = "if-statements"}
 
 Det er tid til at introducere `if`-statements. 
 `if`-statements er en måde at lave en beslutning i koden. 
@@ -39,6 +40,7 @@ Her tjekker vi om `speed` er større end 18. Hvis det er, så skriver vi "Du er 
 Ellers skriver vi "Du er aight".
 
 ## Brug Components
+{id = "components"}
 
 Snart har vi brug for at flytte vores spiller. Derfor skal vi bruge Rigidbody komponenten.
 For at gøre det kan vi gemme en reference til vores Rigidbody komponent i en variabel ved at skrive:
@@ -58,6 +60,8 @@ Det næste er `<RigidBody>` og det er fordi `GetComponent` tager en type som <to
 Altså `GetComponent<RigidBody>()` returnere en reference til den første Rigidbody komponent på objektet som scriptet er koblet til.
 
 ## Input
+{id = "input"}
+
 Hvis vi gerne vil have vores spiller til at bevæge sig, så skal vi først læse inputtet, i den ønsket retning. For at opnå det, så skal man bruge en `InputAction`. Som er en samling af forskellige input muligheder, som kan bruges til at udføre det samme. Vi har så mulighed for at læse statussen af handlingen.
 
 ```c#
@@ -125,6 +129,8 @@ Når i er færdig, så skulle det gerne se sådan her ud:
 ![cube-komponent-setup.png](cube-komponent-setup.png)
 
 ### Transform Rotate
+{id = "transform-rotate"}
+
 Ligesom tidligere kan vi få vores `Transform` component I koden ved at skrive `GetComponent`.
 ```C#
 void Update()
