@@ -3,7 +3,7 @@
         SYSTEM "https://resources.jetbrains.com/writerside/1.0/product-profile.dtd">
 
 <instance-profile id="hi"
-                 name="GDC 2025"
+                 name="GDC 2026"
                  start-page="Day-1-Basics.md">
     <toc-element topic="Day-1-Basics.md">
         <toc-element topic="Opgave-1-Krop-og-kode.md"/>
