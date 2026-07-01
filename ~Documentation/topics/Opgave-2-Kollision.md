@@ -27,7 +27,7 @@ if (shoot.WasPerformedThisFrame() && cooldownLeft <= 0)
 {
     GameObject bullet = Instantiate(bulletPrefab, shootingPoint.transform.postition, Quaternion.identity);
     Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();
-    bulletRb.velocity = transform.forward * bulletSpeed;
+    bulletRb.linearVelocity = transform.forward * bulletSpeed;
     cooldownLeft = cooldownTime;
 }
 ```
@@ -72,7 +72,7 @@ if (other.gameObject.CompareTag("Bulllet")){
 ```
 
 ## Opgave 
-1. Slå “OnTriggerEnter” op i unitys dokumentation 
+1. Slå “OnTriggerEnter” op i Unity's dokumentation 
 2. Anvend funktionen til at lave en mønt der forsvinder når spilleren rammer den
 
 ![CoinsCollect.gif](CoinsCollect.gif)

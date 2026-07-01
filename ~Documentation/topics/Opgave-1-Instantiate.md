@@ -19,9 +19,9 @@ Nu hvor vi har et prefab kan vi slette den originale patron uden at at få probl
 Tilføj et nyt tomt gameobjekt ved navn `ShootingPoint` som en child objekt til `SpillerModel`. Lav en ny script ved navn `ShootingScript` og tilføj den til
 `ShootingPoint` gameobjekt.
 
-
-
 ## Instantiering
+{id = "instantiate"}
+
 Vi åbner vores `ShootingScript`. For at kunne skyde skal vi kunne lave nye objekter mens spillet kører, det gør man med funktionen [`Instantiate`](https://docs.unity3d.com/ScriptReference/Object.Instantiate.html).
 `Instantiate` skal bruge en reference til det objekt man gerne vil lave, så vi laver en `public` variabel `bulletPrefab` af typen `GameObject` som 
 kan indeholde referencen. Vi kan nu drag-and-droppe vores prefab af bullet over i feltet for `Bullet Prefab`. 
@@ -52,6 +52,7 @@ void Update()
 }
 ```
 ## Input Action
+{id = "single-button-input"}
 
 Først skal vi lave en ny variable med navn `shoot` af typen `InputAction` i vores `ShootingScript`
 
