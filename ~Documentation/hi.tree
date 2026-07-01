@@ -21,4 +21,5 @@
         <toc-element topic="Opgave-1-3D-og-Lyd.md"/>
         <toc-element topic="Opgave-2-UI.md"/>
     </toc-element>
+    <toc-element topic="cheatsheet.md"></toc-element>
 </instance-profile>
