@@ -164,13 +164,13 @@ Det kunne måske være at i skal bruge det meget snart ;)
 - Prøv at bruge `GameObject.Destroy()` til at fjerne bullets efter et stykke tid
 
 <deflist collapsible="true">
-<def title="Hint A" default-state="collapsed">
+<def title="Hint 1" default-state="collapsed">
     For at løse denne opgave skal I selv lave jeres egen MonoBehaviour script og tilføje det på et GameObject
 </def>
-<def title="Hint B" default-state="collapsed">
+<def title="Hint 2" default-state="collapsed">
     Det MonoBehaviour script skal tilføjes på Bullet prefab'et
 <img src="EnemyScript.gif" alt="Viser hvordan enemy script kan tilføjes"/>
-<def title="Hint C" default-state="collapsed">
+<def title="Hint 3" default-state="collapsed">
     Det er vigtigt at reset dine cooldown/lifetime til at starte ved det rigtige antal sekunder, og ikke 0.
 <code-block lang="C#">
 void Start()

@@ -1,11 +1,5 @@
 # Cheatsheet
 
-TODO:
-- [ x ] Dag1
-- [ x ] Dag2 
-- [ ] Dag3
-- [ x ] Kort cheatsheet til at bevæge sig i unity
-
 ## Typer
 - `Int` - heltals-værdi
 - `Float` - decimaltal-værdi
@@ -24,11 +18,13 @@ TODO:
   - Et komponent, som tillader et objekt at agere som et navigerbart området.
 - [`NavMeshAgent`](Opgave-3-Random-og-NavMesh.md#navmesh-agent)
   - Et komponent, som tillader et objekt at bevæge sig på et `NavMeshSurface`.
-
+- Arrays er en række af konstant størrelse af elementer af en specifik type, så man kan f.eks. have
+  - `int[]` hvilket er en rækken af hel tals værdier.
+  - `GameObject[]` hvilket er en række af `GameObjects` 
 
 ## C# Konstruktioner
 - [Variabler](Opgave-2-Variabler.md#variables)
-  - Vi bruger variabler til at opbevare data for eksempel `int health = 0;`
+  - Vi bruger variabler til at opbevare data for eksempel <code><span class="token keyword">int</span> <span class="token plain">health</span> <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">;</span></code>
   - `int` erklærer typen af variablen som en hel-tals
   - `health` er variablens navn, som kan henvises til senere
   - højre-siden's værdi er hvad variablen opbevarer
@@ -51,6 +47,11 @@ if (time > doneTime) {
     print("Not Done");
 }
 ```
+- Arrays
+  - Vi kan initialisere et array på følgende måde 
+  - `int[] numbers = new int[2];` - en række med to elementer
+  - Vi kan tilgå det i'te element på følgende måde.
+  - `numbers[0]` - her tilgår vi det første element, da arrays er 0-indekseret.
 
 ## Felt Variabler
 - [`Time.deltaTime`](Opgave-1-Instantiate.md#cooldown)
@@ -96,6 +97,11 @@ if (time > doneTime) {
   - `Physics.Raycast(position, direction, out RaycastHit hit)` returnere true eller falsk hvis den rammer noget og giver information om hvad der blev ramt i variablen hit. 
   - `Physics.Raycast(position, direction, out RaycastHit hit, sightDistance)` gør det samme som før, men nu rammer den kun ting som er inde for afstanden `sightDistance`
   - `Physics.Raycast(position, direction, out RaycastHit hit, sightDistance, sightMask)` gør det samme som før, men nu rammer den kun objekter, hvis lag er i `sightMask`.
+- [`SceneManager.LoadScene`](Opgave-2-UI.md#reload-scene)
+  - Kan bruges til at load en scene, f.eks.
+  - `SceneManager.LoadScene("GameScene");` - vil begynde at load scene.
+
+
 
 ## Animation
 Vi laver en `public Animator animator`. Og referer til den relevante animator i Unity editoren.
@@ -126,10 +132,15 @@ Vi bruger `AudioSource` til at afspille lyd filer. Så i koden, skal vi have:
   - Kan bruges til skabe en aktion der kan læse input fra to akser defineret ud fra fire forskellige input e.g. (W/S/A/D)
   - Her kan vi læse inputtet some en `Vector2` via `moveAction.ReadValue<Vector2>();`
 - [`Binding`](Opgave-1-Instantiate.md#single-button-input)
-  - Kan bruges til en trigger action, som kan læse inputtet fra en knap og bestemme om aktionen er i gang eller ej e.g. (mellemrum, eller enter)
-  - Her kan vi læses inputtet some en `bool` på to måde
+  - Kan bruges til en trigger action, som kan læse inputtet fra en knap og bestemme om aktionen er i gang eller ej e.g. (mellemrum eller enter)
+  - Her kan vi læse inputtet some en `bool` på to måder
     - `inputAction.IsPressed()` som returnerer `true` så længe knappen er holdt nede
     - `inputAction.WasPressedThisFrame()` som returnerer `true` den første frame 
+
+## UI
+Man kan ændre UI gennem kode på flere måder. En af dem er at bruge `GameObject.SetActive(true)` til at fjerne/vise visuelle elementer.
+
+Hvis det er tekst man vil bruge, så anvendes `TextMeshProUGUI`. Vi vil gerne have en public reference: `public TextMeshProUGUI uiText;` så kan vi opdatere teksten på følgende måde: `uiText.text = "Ny værdi";`
 
 ## Debugging
 
@@ -140,6 +151,11 @@ Hvis man oplever fejl i sin kode, så kan det være nice at debugge. Her er nogl
 - `void OnDrawGizmos()` er en funktion, som man kan tilføje til sine komponenter, den bliver kaldet hver gang unity-editoren vil tegne "Gizmos" som er visuelle elementer der kun eksisterer i editoren.
 - `Gizmos.color = Color.red` ændrer farven på den næste Gizmo som bliver tegnet.
 - `Gizmos.DrawRay(position, direction)` tegner en linje fra en start position mod en retning 
+
+## Typiske faldgruber
+Der er mange forskellige slags fejl, man kan begå når man programmere i Unity. Her er nogle typiske.
+-`NullReferenceException` - betyder at man prøver at røre et objekt, som ikke eksisterer.
+-`IndexOutOfRangeException` - betyder at man prøver at røre et index, som ikke eksistere i et array. f.eks. at skrive `numbers[2]` når `numbers` kun har 2 elementer. 
 
 ## Bevægelse i Unity
 

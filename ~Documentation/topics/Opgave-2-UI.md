@@ -43,7 +43,7 @@ public GameObject gameOverScreen;
 
 void OnCollisionEnter(Collision other)
 {
-    if (other.gameObject.CompareTag("Enemy"))
+    if (other.gameObject.CompareTag("EnemyBullet"))
     {
         gameOverScreen.SetActive(true);
     }
@@ -61,9 +61,9 @@ På klassen `SceneManager` i Unity er der en metode `LoadScene` som kan bruges t
 ```C#
 void Update()
 {
-    if (restartAction.WasPerformedThisFrame())
+    if (restartAction.WasPressedThisFrame())
     {
-        SceneManager.LoadScene("GameScene");
+        SceneManager.LoadScene("Programmering");
     }
 }
 ```
