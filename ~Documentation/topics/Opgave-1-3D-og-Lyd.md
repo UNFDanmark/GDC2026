@@ -1,12 +1,12 @@
 # Del 1 (3D og Lyd)
 
 ## Download Assets
-Alle resourcer som vi skal bruge i denne undervisning kan findes her: [Direct Download](https://raw.githubusercontent.com/UNFDanmark/GDC2025/main/%7EDocumentation/resources/ContentGDC2025.zip)
+Alle resourcer som vi skal bruge i denne undervisning kan findes her: [Direct Download](https://raw.githubusercontent.com/UNFDanmark/GDC2026/main/%7EDocumentation/resources/ContentGDC2026.zip)
 
 ## Opsætning af Model på Spiller
 
 Når vi sætter en model på en spiller, så skal vi først importere modellen. Dette gøres ved at trække modellen ind i `Assets` mappen i Unity.
-Her tager vi og importer alle assets fra `ContentGDC2025.zip` til en mappe `/Content`.
+Her tager vi og importer alle assets fra `ContentGDC2026.zip` til en mappe `/Content`.
 
 ![Unity_2SdPWbnbKh.gif](Unity_2SdPWbnbKh.gif)
 

@@ -115,7 +115,6 @@ Vi bruger `AudioSource` til at afspille lyd filer. Så i koden, skal vi have:
 - `audioSource.Play()` spiller den tilknyttet lydfil, som er på sourcen lige nu.
 - `audioSource.Stop()` stopper audio sourcen fra spille den nuværende lyd.
 - `audioSource.PlayOneShot(audioClip)` her kan man spille en ny lydfil på et eksisterende audiosource, det gør at de settings som sourcen har (volume, pitch etc.) bliver brugt på lyden. Bemærk at at `audioSource.Stop()` ikke stopper de lyde som er spillet af `PlayOneShot`.
-- ``
 
 
 ## Input
