@@ -4,7 +4,7 @@ I denne sektion vil vi prøve at lave et simpel AI, hvor når fjenden kan se spi
 ## Raycasting
 For at finde ud af om fjenden kan se spilleren, så tager vi brug af `RayCast`. Vi kan forstille os en raycast, som en linje vi skyder ud i rummet og, hvis vi rammer noget, så kan vi få noget information om hvad.
 
-Vi laver et nyt script på Fjenden som hedder `AIEyes`. 
+Vi laver et nyt script på Fjenden som hedder `EnemyVision`. 
 
 For at tjekke om vi rammer noget foran os, så kan vi gøre det følgende:
 ```c#
@@ -89,7 +89,7 @@ Inde i Unity så skal vi tilføje et nyt tomt `GameObject` som barn af fjenden, 
 
 ![fjende-eyes.png](fjende-eyes.png)
 
-Vi skal huske at sørge for at vores `AIEyes` script på fjenden har en reference til "Eyes"
+Vi skal huske at sørge for at vores `EnemyVision` script på fjenden har en reference til "Eyes"
 
 
 ## Opgave 4

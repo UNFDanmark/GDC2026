@@ -2,9 +2,9 @@
 
 TODO:
 - [ x ] Dag1
-- [  ] Dag2 
+- [ x ] Dag2 
 - [ ] Dag3
-- [ ] Kort cheatsheet til at bevæge sig i unity
+- [ x ] Kort cheatsheet til at bevæge sig i unity
 
 ## Typer
 - `Int` - heltals-værdi
@@ -20,6 +20,10 @@ TODO:
   - Et komponent som får et objekt til at interagere med Unity's fysiksystem
 - `Collider`
   - Et komponent, som fortæller fysiksystemet at rigidbodys kan kollidere med objektet
+- [`NavMeshSurface`](Opgave-3-Random-og-NavMesh.md#navmesh-surface)
+  - Et komponent, som tillader et objekt at agere som et navigerbart området.
+- [`NavMeshAgent`](Opgave-3-Random-og-NavMesh.md#navmesh-agent)
+  - Et komponent, som tillader et objekt at bevæge sig på et `NavMeshSurface`.
 
 
 ## C# Konstruktioner
@@ -39,7 +43,7 @@ TODO:
   - Vi kan erklære en felt-variabel offentlig, hvilket gør det muligt at ændre værdien i editoren 
   - `public int speed = 100;`
 - [If-Else](Opgave-3-If-s-og-input.md#if-statements)
-  - If-statements bruges til at tage beslutninger i kode formen er
+  - If-statements bruges til at tage beslutninger i kode. De består af en condition, then og muligvis else blok: 
 ```c# 
 if (time > doneTime) {
     print("Done");
@@ -54,9 +58,9 @@ if (time > doneTime) {
   - `cooldown -= Time.deltaTime`
 - [`transform.forward`](Opgave-1-Instantiate.md#shooting-point)
   - Kan bruges til at finde den retningsvektor som transform'en peger i langs z-aksen. Tilsvarende findes der `transform.up` til y-aksen og `transform.right` til x-aksen. 
-- `Vector3.Up` - Konstant som altid evaluerer til en `Vector3` med værdierne `(0,1,0)`
-- `Vector3.Foward` - Konstant som altid evaluerer til en `Vector3` med værdierne `(0,0,1)`
-- `Vector3.` - Konstant som altid evaluerer til en `Vector3` med værdierne `(0,0,1)`
+- `Vector3.up` - Konstant som altid evaluerer til en `Vector3` med værdierne `(0,1,0)`
+- `Vector3.foward` - Konstant som altid evaluerer til en `Vector3` med værdierne `(0,0,1)`
+- `Vector3.right` - Konstant som altid evaluerer til en `Vector3` med værdierne `(1,0,0)`
 
 ## Funktioner
 - `void Start()` - bliver kaldet første frame hvor objektet eksisterer
@@ -76,6 +80,43 @@ if (time > doneTime) {
 - [`Destroy`](Opgave-2-Kollision.md#gameobject-destroy)
   - Kan bruges til at destruere objekter
   - `GameObject.Destroy(obj)` hvor `obj` er det objekt som der skal fjernes
+- [`NavMeshAgent.SetDestination`](Opgave-3-Random-og-NavMesh.md#navmesh-agent)
+  - Kan bruges til at opdatere destinationen af en `NavMeshAgent`
+  - `agent.SetDestination(player.position)`
+- [`GameObject.FindWithTag`](Opgave-3-Random-og-NavMesh.md#findwithtag)
+  - Kan bruges til at finde et `GameObject` med det tag specificeret.
+  - `GameObject player = GameObject.FindWithTag("Player");`
+- [`Random.Range`](Opgave-3-Random-og-NavMesh.md#random)
+  - Kan bruges til at generere et tilfældigt tal på to forskellige måder.
+  - `Random.Range(0.0f, 1.0f)` hvis argumenterne er `float`, så returneres der en værdi i intervallet udspændet af de to floats.
+  - `Random.Range(1,6)` hvis argumenterne er `int`, så returneres der en heltals-værdi i intervallet `[min, max - 1]`. Altså i eksemplet så vil det være intervallet `[1,5]`
+- [`Physics.Raycast`](Del-4-Raycasting.md#raycasting)
+  - Raycast skyder en linje ud i rummet og fortæller om det ramte en collider på vejen. Det giver mulighed for at få en masse information.
+  - `Physics.Raycast(position, direction)` returnere true eller falsk hvis den rammer noget fra start position i retningen givet.
+  - `Physics.Raycast(position, direction, out RaycastHit hit)` returnere true eller falsk hvis den rammer noget og giver information om hvad der blev ramt i variablen hit. 
+  - `Physics.Raycast(position, direction, out RaycastHit hit, sightDistance)` gør det samme som før, men nu rammer den kun ting som er inde for afstanden `sightDistance`
+  - `Physics.Raycast(position, direction, out RaycastHit hit, sightDistance, sightMask)` gør det samme som før, men nu rammer den kun objekter, hvis lag er i `sightMask`.
+
+## Animation
+Vi laver en `public Animator animator`. Og referer til den relevante animator i Unity editoren.
+
+Funktioner:
+- `SetFloat(id, value)` kan bruges til at sætte float værdier i animatoren, f.eks. 
+  - `animator.SetFloat("Speed", rb.velocity.magnitude)` 
+- `SetTrigger(id)` kan bruges til at starte en trigger, som er sand i en frame.
+  - `animator.SetTrigger("Shoot")`
+- `SetBool(id, value)` kan bruges til at sætte en bool, som har den valgte værdi indtil ændret. 
+  - `animator.SetBool("IsGrounded", true)` 
+
+## Lyd
+Vi bruger `AudioSource` til at afspille lyd filer. Så i koden, skal vi have:
+`public AudioSource audioSource`.
+
+- `audioSource.Play()` spiller den tilknyttet lydfil, som er på sourcen lige nu.
+- `audioSource.Stop()` stopper audio sourcen fra spille den nuværende lyd.
+- `audioSource.PlayOneShot(audioClip)` her kan man spille en ny lydfil på et eksisterende audiosource, det gør at de settings som sourcen har (volume, pitch etc.) bliver brugt på lyden. Bemærk at at `audioSource.Stop()` ikke stopper de lyde som er spillet af `PlayOneShot`.
+- ``
+
 
 ## Input
 - [`InputAction`](Opgave-3-If-s-og-input.md#input)
@@ -91,6 +132,15 @@ if (time > doneTime) {
     - `inputAction.IsPressed()` som returnerer `true` så længe knappen er holdt nede
     - `inputAction.WasPressedThisFrame()` som returnerer `true` den første frame 
 
+## Debugging
+
+Hvis man oplever fejl i sin kode, så kan det være nice at debugge. Her er nogle gode metoder til det.
+
+- `print(msg)` printer en besked i konsollen kan bruges til at printe forskellige værdier, og så kan du tjekke hvad værdien er.
+- `Debug.LogError(msg)` printer også i konsollen men giver 
+- `void OnDrawGizmos()` er en funktion, som man kan tilføje til sine komponenter, den bliver kaldet hver gang unity-editoren vil tegne "Gizmos" som er visuelle elementer der kun eksisterer i editoren.
+- `Gizmos.color = Color.red` ændrer farven på den næste Gizmo som bliver tegnet.
+- `Gizmos.DrawRay(position, direction)` tegner en linje fra en start position mod en retning 
 
 ## Bevægelse i Unity
 

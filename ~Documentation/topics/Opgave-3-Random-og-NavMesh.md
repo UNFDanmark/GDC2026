@@ -27,6 +27,7 @@ som den vi lige har lavet.
 
 ![navagent.png](navagent.png)
 
+{id = "findwithtag"}
 Vi skal dog stadig fortælle den hvor den skal gå hen. Det kan vi heldigvis nemt gøre med `SetDestination()` funktionen.
 SetDestination tager imod en Vector3 position, som for eksempel vores spillers position. 
 I vores enemy script skal vi hive fat i vores `Nav Mesh Agent`, brug enten `GetComponent<NavMeshAgent>()`,
@@ -38,7 +39,7 @@ Giv vores playerobject player tagget og brug `FindWithTag("Player")`.
 
 ```c#
 public NavMeshAgent agent;
-private GameObject player;
+GameObject player;
 
 void Start(){
     player = GameObject.FindWithTag("Player");
@@ -103,7 +104,7 @@ void Update(){
     }
 }
 ```
-
+{id = "random"}
 Det ville dog være kedeligt hvis de alle spawnede det sammes sted hver gang. 
 Så hvad nu hvis vi generede nogle tilfælge positioner til vores fjender. 
 Her kan vi bruge `Random.Range` der giver os et tilfældigt tal mellem 2 tal vi vælger. 

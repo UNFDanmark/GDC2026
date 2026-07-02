@@ -39,7 +39,7 @@ rammes af en patron. Unity har defineret funktionen `OnCollisionEnter` som kalde
 Det er nemmest hvis fjenderne selv holder styr på hvornår de bliver ramt, så vi laver et script til dem, og tilføjer den nedenstående kode.
 
 ```C#
-void OnCollisionEnter (Collider other)
+void OnCollisionEnter (Collision other)
 {
     //Code here
 }
