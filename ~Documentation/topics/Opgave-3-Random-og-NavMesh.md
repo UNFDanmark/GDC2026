@@ -104,7 +104,7 @@ void Update(){
     }
 }
 ```
-{id = "random"}
+{id = "random-range"}
 Det ville dog være kedeligt hvis de alle spawnede det sammes sted hver gang. 
 Så hvad nu hvis vi generede nogle tilfælge positioner til vores fjender. 
 Her kan vi bruge `Random.Range` der giver os et tilfældigt tal mellem 2 tal vi vælger. 

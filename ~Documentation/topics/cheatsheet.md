@@ -86,7 +86,7 @@ if (time > doneTime) {
 - [`GameObject.FindWithTag`](Opgave-3-Random-og-NavMesh.md#findwithtag)
   - Kan bruges til at finde et `GameObject` med det tag specificeret.
   - `GameObject player = GameObject.FindWithTag("Player");`
-- [`Random.Range`](Opgave-3-Random-og-NavMesh.md#random)
+- [`Random.Range`](Opgave-3-Random-og-NavMesh.md#random-range)
   - Kan bruges til at generere et tilfældigt tal på to forskellige måder.
   - `Random.Range(0.0f, 1.0f)` hvis argumenterne er `float`, så returneres der en værdi i intervallet udspændet af de to floats.
   - `Random.Range(1,6)` hvis argumenterne er `int`, så returneres der en heltals-værdi i intervallet `[min, max - 1]`. Altså i eksemplet så vil det være intervallet `[1,5]`
